@@ -1,7 +1,9 @@
 FROM archlinux:latest as builder
 
-RUN pacman -Syu fontconfig graphite harfbuzz icu zlib biber yay
-RUN yay -Syu tectonic
+# Install deps
+RUN pacman -Syu fontconfig graphite harfbuzz icu zlib biber base-devel git
+# Install tectonic
+RUN git clone https://aur.archlinux.org/tectonic.git && cd tectonic && makepkg -si && cd ..
 
 WORKDIR /usr/src/text
 RUN tectonic --keep-intermediates --reruns 0 main.tex
