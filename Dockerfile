@@ -1,7 +1,7 @@
 FROM archlinux:latest as builder
 
 # Install deps
-RUN pacman -Syu fontconfig graphite harfbuzz icu zlib biber base-devel git
+RUN pacman -Syu --noconfirm fontconfig graphite harfbuzz icu zlib biber base-devel git
 # Install tectonic
 RUN git clone https://aur.archlinux.org/tectonic.git && cd tectonic && makepkg -si && cd ..
 
