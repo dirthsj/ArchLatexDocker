@@ -1,7 +1,7 @@
 FROM whynothugo/makepkg:latest as builder
 
 # Install deps
-RUN pacman -Syu --noconfirm fontconfig graphite harfbuzz icu zlib biber
+# RUN pacman -Syu --noconfirm fontconfig graphite harfbuzz icu zlib biber
 # Install tectonic
 RUN yay -Syu tectonic
 
