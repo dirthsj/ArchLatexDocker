@@ -7,5 +7,4 @@ RUN yay -Syu tectonic
 
 WORKDIR /usr/src/text
 RUN tectonic --keep-intermediates --reruns 0 main.tex
-RUN biber main
 RUN for f in *.tex do tectonic $f; done
