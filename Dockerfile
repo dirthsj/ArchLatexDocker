@@ -6,3 +6,5 @@ RUN yay -Syu --noconfirm tectonic
 RUN yay -Syu --noconfirm ttf-font-awesome-4
 # Set working directory
 WORKDIR /usr/src/tex
+# permissions fix
+RUN chmod 700 /usr/src/tex
